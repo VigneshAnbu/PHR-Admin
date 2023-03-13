@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\admin",
+    "\\src\\app\\admin\\facility-add",
+    "\\src\\app\\admin\\hud-management"
+  ],
+  "SelectedNode": "\\src\\main.ts",
+  "PreviewInSolutionExplorer": false
+}

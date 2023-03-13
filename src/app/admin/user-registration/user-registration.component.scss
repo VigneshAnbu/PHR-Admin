@@ -1,0 +1,39 @@
+::ng-deep {
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+       color: red;
+    }
+    mat-form-field {
+       .mat-hint, input, ::placeholder, .mat-form-field-label {
+          color: red;
+       }
+    }
+ }
+
+ $color-outline: red;
+
+mat-form-field {
+   &.border-red {
+      // to change border color
+      ::ng-deep .mat-form-field-outline {
+           color: $color-outline !important;
+      }
+      // to change label color
+      ::ng-deep .mat-form-field-label {
+           color: $color-outline !important;
+      }
+   }
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: black;
+  }
+
+:host ::ng-deep {
+    datatable-header-cell {
+    font-weight: 900;
+    font-size: 14px;
+    }
+}
+.ths {
+   color: #ffc107;
+}

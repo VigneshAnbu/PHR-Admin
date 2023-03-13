@@ -1,0 +1,103 @@
+<div class="content">
+  <div class="hed_sty1">
+    <span class="material-icons">location_city</span>HUD Mgmt
+    <div class="spacer"></div>
+    <a (click)="createUser()" class="btn">New HUD</a>
+  </div>
+  <mat-expansion-panel [expanded]="panelOpenState" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Search Panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p></p>
+    <!-- <mat-action-row> -->
+    <form [formGroup]="StreetForm" class="row">
+      <div class="col-sm-4">
+        <mat-form-field appearance="outline" class="border-red" style="width:100%">
+          <mat-label>District</mat-label>
+          <!-- <input matInput formControlName="district" placeholder="Select District"> -->
+          <mat-select formControlName="district" (selectionChange)="selectChange('district')">
+            <mat-option *ngFor="let item of districts" [value]="item.district_id">
+              {{item.district_name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      
+
+      <div class="col-sm-4">
+        <mat-form-field appearance="outline" class="border-red" style="width:100%">
+          <mat-label>HUD Name</mat-label>
+          <input matInput formControlName="hud_name">
+        </mat-form-field>
+      </div>
+
+
+      <div class="col-sm-4">
+        <mat-form-field appearance="outline" class="border-red" style="width:100%">
+          <mat-label>HUD GID</mat-label>
+          <input matInput formControlName="hud_gid">
+        </mat-form-field>
+      </div>
+
+    </form>
+    <div class="row">
+      <div class="col-sm-6 text-right">
+        <a (click)="clearSearch()" class="btn">Clear</a>
+      </div>
+      <div class="col-sm-6">
+        <a (click)="search()" href="javascript://" class="btn">Search</a>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>
+
+
+<div class="content">
+  <div class="d_flex m_b_25">
+    <div class="spacer"></div>
+    <!--<a href="javascript://" class="link1 d_flex flex_align_center col_gap_5">
+      <span class="material-icons">save_alt</span>Export
+    </a>-->
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <ngx-datatable class="bootstrap" [rows]="data" [columnMode]="ColumnMode.force" [headerHeight]="50"
+                     [footerHeight]="50" [rowHeight]="50" [limit]="limit" [selected]="selected"
+                     [selectionType]="SelectionType.checkbox" (activate)="onActivate($event)" (select)="onSelect($event)"
+                     (page)="paginate($event)" [count]="totalCount" [externalPaging]="false">
+        <ngx-datatable-column [width]="60" [sortable]="false" [canAutoResize]="false" [draggable]="false"
+                              [resizeable]="false">
+          <ng-template ngx-datatable-header-template let-value="value" let-allRowsSelected="allRowsSelected"
+                       let-selectFn="selectFn">
+            <input type="checkbox" [checked]="allRowsSelected" (change)="selectFn(!allRowsSelected)" />
+          </ng-template>
+          <ng-template ngx-datatable-cell-template let-value="value" let-isSelected="isSelected"
+                       let-onCheckboxChangeFn="onCheckboxChangeFn">
+            <input type="checkbox" [checked]="isSelected" (change)="onCheckboxChangeFn($event)" />
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="district"></ngx-datatable-column>
+        <ngx-datatable-column name="hud"></ngx-datatable-column>
+        <ngx-datatable-column name="gid"></ngx-datatable-column>
+        <ngx-datatable-column [width]="100" name="active" [sortable]="false">
+          <ng-template ngx-datatable-cell-template let-value="value">
+            <i *ngIf="value" class="fas fa-check mr-3 ml-3" data-toggle="tooltip" data-placement="top"
+               title="Active" aria-hidden="true"></i>
+            <i *ngIf="!value" class="fas fa-xmark mr-3 ml-3" data-toggle="tooltip" data-placement="top"
+               title="Inactive" aria-hidden="true"></i>
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [width]="100" name="Edit" [sortable]="false">
+          <ng-template ngx-datatable-cell-template let-row="row">
+            <i class="fas ths fa-pen cursor-pointer mr-3 ml-3" data-toggle="tooltip" data-placement="top"
+               title="Edit" (click)="edit(row)" aria-hidden="true"></i>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    </mat-card-content>
+  </mat-card>
+  <div class="pan_box pad0">
+  </div>
+</div>

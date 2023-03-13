@@ -1,0 +1,235 @@
+
+<div class="content">
+    <div class="hed_sty1">
+        <span class="material-icons">people</span>Create Street
+        <div class="spacer"></div>
+        <a (click)="Backtostreet()" class="btn">Back</a>
+    </div>
+
+    <form [formGroup]="CreateStreetForm" class="row">
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                <mat-label>District</mat-label>
+                <!-- <input matInput formControlName="district" placeholder="Select District"> -->
+                        <mat-select formControlName="district" (selectionChange)="selectChange('district')" >
+                            <mat-option *ngFor="let item of districts" [value]="item.district_id">
+                                {{item.district_name}}
+                            </mat-option>
+                        </mat-select>
+            </mat-form-field>
+        </div>
+    
+    
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                <mat-label>HUD</mat-label>
+                        <mat-select formControlName="hud" (selectionChange)="selectChange('hud')">
+                            <mat-option *ngFor="let item of HUDS" [value]="item.hud_id">
+                                {{item.hud_name}}
+                            </mat-option>
+                        </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                <mat-label>Block</mat-label>
+                <!-- <input matInput formControlName="block" placeholder="Select Block"> -->
+                        <mat-select formControlName="block" (selectionChange)="selectChange('block')">
+                            <mat-option *ngFor="let item of finalBlockList" [value]="item.block_id">
+                                {{item.block_name}}
+                            </mat-option>
+                        </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                <mat-label>Village</mat-label>
+                <mat-select formControlName="village" (selectionChange)="selectChange('village')">
+                            <mat-option *ngFor="let item of Villages" [value]="item.village_id">
+                                {{item.village_name}}
+                            </mat-option>
+                        </mat-select>
+            </mat-form-field>
+        </div>
+    
+    
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                <mat-label>Habitation</mat-label>
+                <mat-select formControlName="habitation" (selectionChange)="selectChange('habitation')">
+                            <mat-option *ngFor="let item of Habitations" [value]="item.habitation_id">
+                                {{item.habitation_name}}
+                            </mat-option>
+                        </mat-select>
+            </mat-form-field>
+        </div>
+    
+        <div class="col-sm-6">
+            <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                <mat-label>Street Name</mat-label>
+                <input matInput formControlName="street_name">
+            </mat-form-field>
+        </div>
+    
+        <div class="row">
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Ward</mat-label>
+                    <input matInput formControlName="ward">
+                </mat-form-field>
+            </div>
+        
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Latitude</mat-label>
+                    <input matInput formControlName="latitude">
+                </mat-form-field>
+            </div>
+        
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Longitude</mat-label>
+                    <input matInput formControlName="longitude">
+                </mat-form-field>
+            </div>
+        
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Pincode</mat-label>
+                    <input matInput formControlName="pincode">
+                </mat-form-field>
+            </div>
+        </div>
+    
+    
+        <div class="row">
+    
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Catering Anganwadi</mat-label>
+                            <mat-select formControlName="cateringanganwadi" (selectionChange)="selectChange('cateringanganwadi')">
+                                <mat-option *ngFor="let item of cateringanganwadilist" [value]="item.facility_id">
+                                    {{item.facility_name}}
+                                </mat-option>
+                            </mat-select>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Catering HSC</mat-label>
+                            <mat-select formControlName="facilityhsc" (selectionChange)="selectChange('facility')">
+                                <mat-option *ngFor="let item of facilities" [value]="item.facility_id">
+                                    {{item.facility_name}}
+                                </mat-option>
+                            </mat-select>
+                </mat-form-field>
+            </div>
+        
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>HSC Unit</mat-label>
+                    <mat-select formControlName="hscunit">
+                      <mat-option value="Unit-1">Unit-1</mat-option>
+                      <mat-option value="Unit-2">Unit-2</mat-option>
+                      <mat-option value="Unit-3">Unit-3</mat-option>
+                      <mat-option value="Unit-4">Unit-4</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+    
+        </div>
+    
+    
+        
+        <div class="row">
+        
+            <div class="col-sm-4">
+                <mat-checkbox class="example-margin" formControlName="costalarea">Coastal Area</mat-checkbox>
+            </div>
+    
+            <div class="col-sm-4">
+                <mat-checkbox class="example-margin" formControlName="hillyarea">Hilly Area</mat-checkbox>
+            </div>
+    
+            <div class="col-sm-4">
+                <mat-checkbox class="example-margin" formControlName="forestarea">Forest Area</mat-checkbox>
+            </div>
+    
+            <div class="col-sm-4">
+                <mat-checkbox class="example-margin" formControlName="tribalarea">Tribal Area</mat-checkbox>
+            </div>
+            
+    
+        </div>
+        
+    
+        
+        
+        <div class="row">
+    
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Revenue Village</mat-label>
+                            <mat-select formControlName="revvillage" (selectionChange)="selectChange('revvillage')">
+                                <mat-option *ngFor="let item of RevVillageList" [value]="item.rev_village_id">
+                                    {{item.rev_village_name}}
+                                </mat-option>
+                            </mat-select>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Constituency Assembly</mat-label>
+                            <mat-select formControlName="constituencyassembly" (selectionChange)="selectChange('constituencyassembly')">
+                                <mat-option *ngFor="let item of constituencyassemblyList" [value]="item.assembly_constituency_id">
+                                    {{item.assembly_constituency_name}}
+                                </mat-option>
+                            </mat-select>
+                </mat-form-field>
+            </div>
+    
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Constituency Parliamentary</mat-label>
+                            <mat-select formControlName="constituencyparliamentary" (selectionChange)="selectChange('constituencyparliamentary')">
+                                <mat-option *ngFor="let item of constituencyparliamentaryList" [value]="item.parlimentary_constituency_id">
+                                    {{item.parlimentary_constituency_name}}
+                                </mat-option>
+                            </mat-select>
+                </mat-form-field>
+            </div>
+        
+            <div class="col-sm-4">
+                <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                    <mat-label>Is Active</mat-label>
+                    <mat-select formControlName="isactive">
+                      <mat-option value="true">Yes</mat-option>
+                      <mat-option value="false">No</mat-option>                  
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+    
+        </div>
+    
+    
+        
+    
+        
+    </form>
+    <div class="row">
+        <!-- <div class="col-sm-6 text-right">
+            <a (click)="clearSearch()" class="btn">Clear</a>
+        </div> -->
+        <div class="col-sm-6">
+            <a (click)="SaveStreet()" href="javascript://" class="btn">Submit</a>
+        </div>
+    </div>
+</div>
+
+
+
+

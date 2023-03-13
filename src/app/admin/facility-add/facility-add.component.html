@@ -1,0 +1,186 @@
+<div class="content">
+  <div class="hed_sty1">
+    {{headingname}}
+    <div class="spacer"></div>
+    <a (click)="navigateBack()" class="btn btn_sty1"><span class="material-icons">west</span>Back</a>
+  </div>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step label="">
+      <br />
+      <form [formGroup]="personalDetailForm" class="row">
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Owner</mat-label>
+            <mat-select formControlName="owner" (selectionChange)="selectChange('owner')" required>
+              <mat-option *ngFor="let item of ownerlist" [value]="item.owner_id">
+                {{item.owner_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Directorate</mat-label>
+            <mat-select formControlName="directorate" (selectionChange)="selectChange('directorate')">
+              <mat-option *ngFor="let item of finaldirectoratelist" [value]="item.directorate_id">
+                {{item.directorate_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category" (selectionChange)="selectChange('category')">
+              <mat-option *ngFor="let item of finalcategorylist" [value]="item.category_id">
+                {{item.category_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type" (selectionChange)="selectChange('type')">
+              <mat-option *ngFor="let item of finaltypelist" [value]="item.facility_type_id">
+                {{item.facility_type_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Level</mat-label>
+            <mat-select formControlName="level" (selectionChange)="selectChange('level')">
+              <mat-option *ngFor="let item of finallevellist" [value]="item.facility_level_id">
+                {{item.facility_level_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District</mat-label>
+            <mat-select formControlName="district" (selectionChange)="selectChange('district')">
+              <mat-option *ngFor="let item of districts" [value]="item.district_id">
+                {{item.district_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>HUD</mat-label>
+            <mat-select formControlName="hud" (selectionChange)="selectChange('hud')">
+              <mat-option *ngFor="let item of finalhuds" [value]="item.hud_id">
+                {{item.hud_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Block</mat-label>
+            <mat-select formControlName="block" (selectionChange)="selectChange('block')">
+              <mat-option *ngFor="let item of finalBlockList" [value]="item.block_id">
+                {{item.block_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Facility Name</mat-label>
+            <input matInput formControlName="facility_name" placeholder="Facility Name">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Parent Facility</mat-label>
+            <mat-select formControlName="parent_facility" (selectionChange)="selectChange('parent')">
+              <mat-option *ngFor="let item of facilities" [value]="item.facility_id">
+                {{item.facility_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Facility Located Village</mat-label>
+            <mat-select formControlName="facility_village" (selectionChange)="selectChange('village')">
+              <mat-option *ngFor="let item of villages" [value]="item.village_id">
+                {{item.village_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Facility Located Street</mat-label>
+            <mat-select formControlName="facility_street" (selectionChange)="selectChange('street')">
+              <mat-option *ngFor="let item of streets" [value]="item.street_id">
+                {{item.street_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput formControlName="facility_mobile" placeholder="Mobile Number">
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Landline Number</mat-label>
+            <input matInput formControlName="facility_landline" placeholder="Landline Number">
+          </mat-form-field>
+        </div>
+        <div class="col-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="facility_email" type="email" placeholder="Email">
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Latitude</mat-label>
+            <input matInput formControlName="facility_latitude" placeholder="Latitude">
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Longitude</mat-label>
+            <input matInput formControlName="facility_longitude" placeholder="Longitude">
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>HWC</mat-label>
+            <mat-select formControlName="facility_hwc" >
+              <mat-option value="NOT HWC">NOT HWC</mat-option>
+              <mat-option [value]="'HWC 2017 - 18'">HWC 2017 - 18</mat-option>
+              <mat-option [value]="'HWC 2018 - 19'">HWC 2018 - 19</mat-option>
+              <mat-option [value]="'HWC 2019 - 20'">HWC 2019 - 20</mat-option>
+              <mat-option [value]="'HWC 2020 - 21'">HWC 2020 - 21</mat-option>
+              <mat-option [value]="'HWC 2021 - 22'">HWC 2021 - 22</mat-option>
+              <mat-option [value]="'HWC 2022 - 23'">HWC 2022 - 23</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Is Active</mat-label>
+            <mat-select formControlName="facility_active">
+              <mat-option value="1">Yes</mat-option>
+              <mat-option value="0">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="d-flex justify-content-center">
+        <button mat-raised-button matStepperNext (click)="savefacility()" color='primary'>Submit</button>
+      </div>
+    </mat-step>    
+  </mat-stepper>
+</div>

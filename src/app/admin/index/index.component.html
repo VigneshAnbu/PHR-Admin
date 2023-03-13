@@ -1,0 +1,105 @@
+<input type="checkbox" id="h_menu" >
+<div class="header">
+  <div class="logo_txt">TNPHR Web Admin</div>
+  <div class="hamburger_menu">
+      <label for="h_menu"><span class="material-icons">menu</span></label>
+  </div>
+  <div class="spacer"></div>
+  <div class="logo">
+      <img src="assets/images/DPHLogo.png" alt="DPH" />
+      <img src="assets/images/NHMLogo.png" alt="NHM" />
+      <img src="assets/images/TamilNadu_Logo.png" alt="TamilNadu" />
+      <img src="assets/images/UHC_Logo.png" alt="UHC" />
+      <img src="assets/images/MTM_logo.png" alt="MTM" />
+  </div>
+  <div class="spacer"></div>
+  <div class="user drop_wrap">
+      <div class="lbl drop_btn">
+         <span class="material-icons">account_circle</span> User Name <span class="material-icons">expand_more</span>
+      </div>
+      <div class="pop_drop drop_sec">
+          <a href="#">Logout</a>
+      </div>
+  </div>
+</div>
+<div class="body">
+    <div class="left_pan">
+        <div class="left_menus">
+          <ul>
+            <li><a [routerLink]="['/admin/dashboard']"><span class="material-icons">dashboard</span><span>Dashboard</span></a></li>
+            <li class="active">
+              <a [routerLink]="['/admin/user-management']">
+                <span class="material-icons">people</span><span>
+                  Users
+                  Mgmt.
+                </span>
+              </a>
+            </li>
+            <li><a href="#"><span class="material-icons">store</span><span>PDS Shop Mgmt.</span></a></li>
+            <li><a href="#"><span class="material-icons">place</span><span>Streets Mgmt.</span></a></li>
+            <li><a [routerLink]="['/admin/facility-management']"><span class="material-icons">location_city</span><span>Facility Mgmt.</span></a></li>
+            <li><a href="ftp_mgmt.html"><span class="material-icons">event</span><span>FTP Mgmt.</span></a></li>
+            <li><a [routerLink]="['/admin/hud-management']"><span class="material-icons">add_box</span><span>HUD Mgmt.</span></a></li>
+            <li class="drop">
+              <a href="javascript://"><span class="material-icons">category</span><span>Hierarchy Mgmt.</span></a>
+              <ul class="sub_menus">
+                <li>
+                  <a href="#">
+                    <span class="material-icons">density_small</span><span>
+                      Districts
+                      Mgmt.
+                    </span>
+                  </a>
+                </li>
+                <li><a [routerLink]="['/admin/hud-management']"><span class="material-icons">add_box</span><span>HUD Mgmt.</span></a></li>
+                <li>
+                  <a href="#"><span class="material-icons">view_module</span><span>Blocks Mgmt.</span></a>
+                </li>
+                <li><a href="#"><span class="material-icons">hive</span><span>Villages Mgmt.</span></a></li>
+                <li><a href="#"><span class="material-icons">home</span><span>Habitation Mgmt.</span></a></li>
+                <li><a href="#"><span class="material-icons">3p</span><span>Taluk Mgmt.</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+    </div>
+    <div class="right_pan">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- <mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+      <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+  
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+    </button>
+    <router-outlet></router-outlet>
+    </div>
+  
+</mat-drawer-container> -->

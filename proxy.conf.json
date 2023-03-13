@@ -1,0 +1,164 @@
+{
+  "/api/v1/admin_api_get_district_master": {
+    "target": "http://142.132.206.93:8019",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_block_master": {
+    "target": "http://142.132.206.93:8012",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_user_list": {
+    "target": "http://142.132.206.93:8044",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_master": {
+    "target": "http://142.132.206.93:8023",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_role_master": {
+    "target": "http://142.132.206.93:8033",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_street_list": {
+    "target": "http://142.132.206.93:8036",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_village_list": {
+    "target": "http://142.132.206.93:8045",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_habitation_master": {
+    "target": "http://142.132.206.93:8028",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_list": {
+    "target": "http://142.132.206.93:8040",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_rev_village_list": {
+    "target": "http://142.132.206.93:8031",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_constituency_assembly_master": {
+    "target": "http://142.132.206.93:8015",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_constituency_parliamentary": {
+    "target": "http://142.132.206.93:8016",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_hud_list": {
+    "target": "http://142.132.206.93:8029",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_upsert_street": {
+    "target": "http://142.132.206.93:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_category_master": {
+    "target": "http://142.132.206.93:8020",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_directorate_master": {
+    "target": "http://142.132.206.93:8021",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_level_master": {
+    "target": "http://142.132.206.93:8022",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_owner_master": {
+    "target": "http://142.132.206.93:8024",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_facility_type_master": {
+    "target": "http://142.132.206.93:8025",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_block_list": {
+    "target": "http://142.132.206.93:8011",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_upsert_facility": {
+    "target": "http://142.132.206.93:8051",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_district_list": {
+    "target": "http://142.132.206.93:8018",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_upsert_hud": {
+    "target": "http://142.132.206.93:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_upsert_village": {
+    "target": "http://142.132.206.93:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_taluk_list": {
+    "target": "http://142.132.206.93:8041",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_upsert_taluk": {
+    "target": "http://142.132.206.93:8000",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api/v1/admin_api_get_state_master": {
+    "target": "http://142.132.206.93:8035",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

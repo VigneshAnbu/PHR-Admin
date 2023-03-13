@@ -1,0 +1,79 @@
+<div class="content">
+  <div class="hed_sty1">
+    {{headingname}}
+    <div class="spacer"></div>
+    <a (click)="navigateBack()" class="btn btn_sty1"><span class="material-icons">west</span>Back</a>
+  </div>
+  <mat-stepper [linear]="isLinear" #stepper>
+    <mat-step label="">
+      <br />
+      <form [formGroup]="hudform" class="row">
+        <div class="col-sm-4">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state" required>
+              <mat-option *ngFor="let item of states" [value]="item.state_id">
+                {{item.state_name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District Name</mat-label>
+            <input matInput formControlName="district_name" placeholder="District Name" required>
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District Local Name</mat-label>
+            <input matInput formControlName="district_local_name" placeholder="District Local Name">
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District LGD Code</mat-label>
+            <input matInput formControlName="district_lgd_code" placeholder="LGD Code">
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District PICME Code</mat-label>
+            <input matInput formControlName="district_picme_code" placeholder="PICME Code">
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District RD Code</mat-label>
+            <input matInput formControlName="district_rd_code" placeholder="RD Code">
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District REV Code</mat-label>
+            <input matInput formControlName="district_rev_code" placeholder="REV Code">
+          </mat-form-field>
+        </div>
+        <div class="col-6">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>District Short code</mat-label>
+            <input matInput formControlName="district_short_code" placeholder="District Short Code">
+          </mat-form-field>
+        </div>
+        <div class="col-3">
+          <mat-form-field appearance="outline" class="border-red" style="width:100%">
+            <mat-label>Is Active</mat-label>
+            <mat-select formControlName="active" required>
+              <mat-option value="1">Yes</mat-option>
+              <mat-option value="0">No</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="d-flex justify-content-center">
+        <button mat-raised-button matStepperNext (click)="savehud()" color='primary'>Submit</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</div>

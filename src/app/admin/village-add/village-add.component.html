@@ -1,0 +1,105 @@
+
+<div class="content">
+  <div class="hed_sty1">
+    <span class="material-icons">people</span>Create Street
+    <div class="spacer"></div>
+    <a (click)="Backtostreet()" class="btn">Back</a>
+  </div>
+
+  <form [formGroup]="CreateStreetForm" class="row">
+    <div class="col-sm-4">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>District</mat-label>
+        <!-- <input matInput formControlName="district" placeholder="Select District"> -->
+        <mat-select formControlName="district" (selectionChange)="selectChange('district')">
+          <mat-option *ngFor="let item of districts" [value]="item.district_id">
+            {{item.district_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-sm-4">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>HUD</mat-label>
+        <mat-select formControlName="hud" (selectionChange)="selectChange('hud')">
+          <mat-option *ngFor="let item of HUDS" [value]="item.hud_id">
+            {{item.hud_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-sm-4">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>Block</mat-label>
+        <!-- <input matInput formControlName="block" placeholder="Select Block"> -->
+        <mat-select formControlName="block" (selectionChange)="selectChange('block')">
+          <mat-option *ngFor="let item of finalBlockList" [value]="item.block_id">
+            {{item.block_name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+
+    <div class="col-sm-3">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>Village Name</mat-label>
+        <input matInput formControlName="village_name">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>Village Local Name</mat-label>
+        <input matInput formControlName="village_local_name">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>Village Type</mat-label>
+        <mat-select formControlName="village_type">
+          <mat-option value="VP">Village Panchayat</mat-option>
+          <mat-option value="TP">Town Panchayat</mat-option>
+          <mat-option value="CO">Corporation</mat-option>
+          <mat-option value="MP">Municipal</mat-option>
+          <mat-option value="OT">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>LGT Code</mat-label>
+        <input matInput formControlName="lgt_code">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>Local Body Code</mat-label>
+        <input matInput formControlName="local_body_code">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-3">
+      <mat-form-field appearance="outline" class="border-red" style="width:100%">
+        <mat-label>Is Active</mat-label>
+        <mat-select formControlName="isactive">
+          <mat-option value="1">Yes</mat-option>
+          <mat-option value="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+  <div class="row">
+    <!-- <div class="col-sm-6 text-right">
+        <a (click)="clearSearch()" class="btn">Clear</a>
+    </div> -->
+    <div class="col-sm-6">
+      <a (click)="SaveStreet()" href="javascript://" class="btn">Submit</a>
+    </div>
+  </div>
+</div>
+
+
+
+

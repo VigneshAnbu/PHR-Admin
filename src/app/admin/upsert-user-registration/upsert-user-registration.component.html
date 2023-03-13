@@ -1,0 +1,67 @@
+<div class="content">
+    <div class="hed_sty1">
+        Create User
+        <div class="spacer"></div>
+        <a (click)="navigateBack()" class="btn btn_sty1"><span class="material-icons">west</span>Back</a>
+    </div>
+    <mat-stepper [linear]="isLinear" #stepper>
+        <mat-step  label="Personal Details">
+            <form [formGroup]="personalDetailForm" class="row">
+                <div class="col-2">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>User Title</mat-label>
+                        <input matInput formControlName="title" placeholder="User Title">
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>User First Name</mat-label>
+                        <input matInput formControlName="firstName" placeholder="User First Name">
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>User Last Name</mat-label>
+                        <input matInput formControlName="lastName" placeholder="User Last Name">
+                    </mat-form-field>
+                </div>
+                <div class="col-2">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>Gender</mat-label>
+                        <input matInput formControlName="gender" placeholder="Gender">
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput formControlName="dob" placeholder="Date of Birth">
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput formControlName="number" placeholder="Mobile Number">
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" placeholder="Email">
+                    </mat-form-field>
+                </div>
+                <div class="col-4">
+                    <mat-form-field appearance="outline" class="border-red" style="width:100%">
+                        <mat-label>Postal Address</mat-label>
+                        <input matInput formControlName="address" placeholder="Postal Address">
+                    </mat-form-field>
+                </div>
+            </form>
+            <div class="d-flex justify-content-center">
+                <button mat-raised-button matStepperNext color='primary'>Next</button>
+            </div>
+        </mat-step>
+        <mat-step  label="Employee Details">
+
+        </mat-step>
+    </mat-stepper>
+</div>
